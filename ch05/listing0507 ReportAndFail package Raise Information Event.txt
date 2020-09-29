@@ -1,0 +1,12 @@
+public void Main()
+	{
+            string packageName = Dts.Variables["System::PackageName"].Value.ToString();
+            string taskName = Dts.Variables["System::TaskName"].Value.ToString();
+            string subComponent = packageName + "." + taskName;
+            int errorCode = -1001;
+            string description = packageName + " execution failed";
+
+            Dts.Events.FireError(errorCode, subComponent, description, "", 0);
+            
+            Dts.TaskResult = (int)ScriptResults.Success;
+	}

@@ -1,0 +1,17 @@
+public void Main()
+	{
+            // System::PackageName, System::TaskName
+            // User::PackagePath
+
+            string packageName = Dts.Variables["System::PackageName"].Value.ToString();
+            string taskName = Dts.Variables["System::TaskName"].Value.ToString();
+            string subComponent = packageName + "." + taskName;
+            int informationCode = 1001;
+            bool fireAgain = true;
+
+            string packagePath = Dts.Variables["User::PackagePath"].Value.ToString();
+            string description = packagePath + " execution succeeded";
+            Dts.Events.FireInformation(informationCode, subComponent, description, "", 0, ref fireAgain);
+
+            Dts.TaskResult = (int)ScriptResults.Success;
+	}

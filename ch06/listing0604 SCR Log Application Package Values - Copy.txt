@@ -1,0 +1,25 @@
+public void Main()
+	{
+            // System::PackageName, System::TaskName
+            // User::PackagePath, User::ExecutionOrder, User::FailApplicationOnPackageFailure
+
+            string packageName = Dts.Variables["System::PackageName"].Value.ToString();
+            string taskName = Dts.Variables["System::TaskName"].Value.ToString();
+            string subComponent = packageName + "." + taskName;
+            int informationCode = 1001;
+            bool fireAgain = true;
+
+            string packagePath = Dts.Variables["User::PackagePath"].Value.ToString();
+            string description = "PackagePath: " + packagePath;
+            Dts.Events.FireInformation(informationCode, subComponent, description, "", 0, ref fireAgain);
+
+            int executionOrder = Convert.ToInt32(Dts.Variables["User::ExecutionOrder"].Value);
+            description = "ExecutionOrder: " + executionOrder.ToString();
+            Dts.Events.FireInformation(informationCode, subComponent, description, "", 0, ref fireAgain);
+
+            bool failApplicationOnPackageFailure = Convert.ToBoolean(Dts.Variables["User::FailApplicationOnPackageFailure"].Value);
+            description = "FailApplicationOnPackageFailure: " + failApplicationOnPackageFailure.ToString();
+            Dts.Events.FireInformation(informationCode, subComponent, description, "", 0, ref fireAgain);
+
+            Dts.TaskResult = (int)ScriptResults.Success;
+	}

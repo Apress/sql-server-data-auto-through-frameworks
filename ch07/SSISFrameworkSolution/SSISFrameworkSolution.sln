@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.329
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "SSISFrameworkProject", "SSISFrameworkProject\SSISFrameworkProject.dtproj", "{BC68F9EC-A711-4509-BFD5-E87CB35928AA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BC68F9EC-A711-4509-BFD5-E87CB35928AA}.Development|Default.ActiveCfg = Development
+		{BC68F9EC-A711-4509-BFD5-E87CB35928AA}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {433CD50E-5D27-43E3-ADBA-2FB94C9CB1E8}
+	EndGlobalSection
+EndGlobal
